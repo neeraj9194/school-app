@@ -11,7 +11,7 @@ class Student(models.Model):
     )
     last_name = models.CharField(
         max_length=100,
-        help_text="First name of the student."
+        help_text="Last name of the student."
     )
     dob = models.DateField(
         help_text="Date of birth."
