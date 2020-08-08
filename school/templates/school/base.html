@@ -10,32 +10,60 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="{% static 'school/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'school/sidebar.css' %}">
 
   <title>SCHOOL APP</title>
 </head>
 <body>
-<div class="container">
-  <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-      <img src="{% static "school/education.svg" %}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-      SCHOOL APP
-    </a>
-  </nav>
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="sidebar-sticky pt-3">
+        <ul class="nav flex-column nav-tabs">
+          <li class="nav-item">
+            <a id="dashboard-tab" class="nav-link" href="/">
+              <i class="fa fa-home"></i>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="student-tab" class="nav-link" href="/student/">
+              <i class="fa fa-users"></i>
+              Student
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="teacher-tab" class="nav-link" href="/teacher/">
+              <i class="fa fa-graduation-cap"></i>
+              Teacher
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-  <nav>
-    <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a id="student-tab" class="nav-link" href="/student/">Student</a>
-      </li>
-      <li class="nav-item">
-        <a id="teacher-tab" class="nav-link" href="/teacher/">Teacher</a>
-      </li>
-    </ul>
-  </nav>
-  {% block list-block %}{% endblock %}
 
+      {#  <nav class="navbar navbar-light bg-light">#}
+      {#    <a class="navbar-brand" href="#">#}
+      {#      <img src="{% static "school/education.svg" %}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">#}
+      {#      SCHOOL APP#}
+      {#    </a>#}
+      {#  </nav>#}
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+{#      <nav>#}
+{#        <ul class="nav nav-tabs">#}
+{#          <li class="nav-item">#}
+{#            <a id="student-tab" class="nav-link" href="/student/">Student</a>#}
+{#          </li>#}
+{#          <li class="nav-item">#}
+{#            <a id="teacher-tab" class="nav-link" href="/teacher/">Teacher</a>#}
+{#          </li>#}
+{#        </ul>#}
+{#      </nav>#}
+      {% block list-block %}{% endblock %}
+    </main>
+  </div>
 </div>
-
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -46,10 +74,10 @@
     $(document).ready(function(){
         {# Logic to set "active" class when page changes #}
         $('nav a').on('click', function(e) {
-            $( 'nav' ).find( 'li.active' ).removeClass( 'active' );
+            $( 'nav' ).find( 'li a.active' ).removeClass( 'active' );
             localStorage.setItem('activeTab', $(e.target).attr('id'));
         });
-        let activeTab = localStorage.getItem('activeTab');
+        let activeTab = localStorage.getItem('activeTab') || "dashboard-tab";
         if(activeTab){
             $('#' + activeTab ).addClass("active");
         }
