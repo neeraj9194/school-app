@@ -1,10 +1,10 @@
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, DeleteView
 
 from teacher.forms import TeacherForm
 from teacher.models import Teacher
 
 
-class TeacherView(CreateView, UpdateView):
+class TeacherView(CreateView, UpdateView, DeleteView):
     """
     A Teacher view responsible for
      - Create/Update/Delete in Teacher model.

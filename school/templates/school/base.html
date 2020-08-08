@@ -74,6 +74,12 @@
             window.location.href = '/'+ url_name + '/';
         });
 
+        {# Delete modal should get ID from list table #}
+        $('#deleteModal').on('show.bs.modal', function (event) {
+            let button = $(event.relatedTarget);
+            $('#deleteModal form').attr("action", button.data('url'));
+        });
+
     });
 </script>
 

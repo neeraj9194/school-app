@@ -27,6 +27,11 @@
       <a class="btn btn-primary edit-button" href="/teacher/{{ teacher.id }}/" role="button">
         <i class="fas fa-edit"></i>
       </a>
+      <a class="btn btn-danger delete-button" role="button"
+         data-toggle="modal" data-target="#deleteModal" data-url="/teacher/{{ teacher.id }}/delete/"
+      >
+        <i class="fas fa-trash"></i>
+      </a>
     </td>
   </tr>
   {% endfor %}
@@ -36,4 +41,5 @@
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addTeacherModal" >Add New Teacher</button>
 
 {% include "school/create-modal.html"  with modal_name="addTeacherModal" modal_header="Add Teacher" %}
+{% include "school/delete-modal.html" %}
 {% endblock %}
