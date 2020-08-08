@@ -8,7 +8,8 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'school/style.css' %}">
 
   <title>SCHOOL APP</title>
 </head>
@@ -43,16 +44,36 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 <script>
     $(document).ready(function(){
+        {# Logic to set "active" class when page changes #}
         $('nav a').on('click', function(e) {
             $( 'nav' ).find( 'li.active' ).removeClass( 'active' );
-            console.log(e);
-            console.log($(e.target).attr('id'));
             localStorage.setItem('activeTab', $(e.target).attr('id'));
         });
         let activeTab = localStorage.getItem('activeTab');
         if(activeTab){
             $('#' + activeTab ).addClass("active");
         }
+
+        {# Show modal when detail page is called #}
+        let url_array = window.location.pathname.replace(/\/$/, "").split("/");
+        let url_id = url_array[url_array.length-1];
+        let url_name = url_array[url_array.length-2];
+        let modal_name = null;
+        if(url_name === "student") {
+            modal_name = "#addStudentModal"
+        }
+        else if(url_name === "teacher") {
+            modal_name = "#addTeacherModal"
+        }
+        if (url_id != null || modal_name != null){
+            $(modal_name).modal("show");
+        }
+
+        {#  When modal closed redirect back to list page  #}
+        $(modal_name).on('hide.bs.modal', function(){
+            window.location.href = '/'+ url_name + '/';
+        });
+
     });
 </script>
 

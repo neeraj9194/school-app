@@ -10,6 +10,7 @@
     <th scope="col">Last</th>
     <th scope="col">Date of Birth</th>
     <th scope="col">Stream</th>
+    <th scope="col">Action</th>
   </tr>
   </thead>
   <tbody>
@@ -20,12 +21,19 @@
     <td>{{ student.last_name }}</td>
     <td>{{ student.dob }}</td>
     <td>{{ student.stream }}</td>
+    <td>
+      <a class="btn btn-primary edit-button" href="/student/{{ student.id }}/" role="button">
+        <i class="fas fa-edit"></i>
+      </a>
+    </td>
   </tr>
   {% endfor %}
   </tbody>
 </table>
 
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addStudentModal" >Add New Student</button>
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addStudentModal" >
+  Add New Student
+</button>
 
 {% include "school/create-modal.html"  with modal_name="addStudentModal" modal_header="Add Student" %}
 {% endblock %}
