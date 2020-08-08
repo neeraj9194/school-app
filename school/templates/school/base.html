@@ -13,29 +13,26 @@
   <title>SCHOOL APP</title>
 </head>
 <body>
-<!-- Image and text -->
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">
-    <img src="{% static "school/education.svg" %}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-    SCHOOL APP
-  </a>
-</nav>
-
 <div class="container">
-  <nav>
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-      <a class="nav-link active" id="nav-student-tab" data-toggle="tab" href="#nav-student" role="tab" aria-controls="nav-student" aria-selected="true">Students</a>
-      <a class="nav-link" id="nav-teacher-tab" data-toggle="tab" href="#nav-teacher" role="tab" aria-controls="nav-teacher" aria-selected="false">Teachers</a>
-    </div>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="{% static "school/education.svg" %}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+      SCHOOL APP
+    </a>
   </nav>
-  <div class="tab-content" id="nav-tabContent">
-    <div class="tab-pane fade show active" id="nav-student" role="tabpanel" aria-labelledby="nav-student">
-      {% block student-list %}{% endblock %}
-    </div>
-    <div class="tab-pane fade" id="nav-teacher" role="tabpanel" aria-labelledby="nav-teacher">
-      {% block teacher-list %}{% endblock %}
-    </div>
-  </div>
+
+  <nav>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a id="student-tab" class="nav-link" href="/student/">Student</a>
+      </li>
+      <li class="nav-item">
+        <a id="teacher-tab" class="nav-link" href="/teacher/">Teacher</a>
+      </li>
+    </ul>
+  </nav>
+  {% block list-block %}{% endblock %}
+
 </div>
 
 
@@ -44,6 +41,20 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        $('nav a').on('click', function(e) {
+            $( 'nav' ).find( 'li.active' ).removeClass( 'active' );
+            console.log(e);
+            console.log($(e.target).attr('id'));
+            localStorage.setItem('activeTab', $(e.target).attr('id'));
+        });
+        let activeTab = localStorage.getItem('activeTab');
+        if(activeTab){
+            $('#' + activeTab ).addClass("active");
+        }
+    });
+</script>
 
 </body>
 </html>
