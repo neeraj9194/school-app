@@ -25,6 +25,10 @@
       <a class="btn btn-primary edit-button" href="/student/{{ student.id }}/" role="button">
         <i class="fas fa-edit"></i>
       </a>
+      <a class="btn btn-danger delete-button" role="button"
+         data-toggle="modal" data-target="#deleteModal" data-url="/student/{{ student.id }}/delete/">
+        <i class="fas fa-trash"></i>
+      </a>
     </td>
   </tr>
   {% endfor %}
@@ -36,6 +40,7 @@
 </button>
 
 {% include "school/create-modal.html"  with modal_name="addStudentModal" modal_header="Add Student" %}
+{% include "school/delete-modal.html" %}
 {% endblock %}
 
 
