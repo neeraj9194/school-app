@@ -4,10 +4,10 @@ from student.forms import StudentForm
 from student.models import Student
 
 
-class StudentView(CreateView, UpdateView, DeleteView):
+class StudentView(CreateView):
     """
     A Student view responsible for
-     - Create/Update/Delete in Student model.
+     - Create/List in Student model.
     """
     form_class = StudentForm
     model = Student
@@ -31,3 +31,20 @@ class StudentView(CreateView, UpdateView, DeleteView):
             self.object = None
         return self.render_to_response(self.get_context_data())
 
+
+class StudentUpdateView(UpdateView, DeleteView):
+    """
+    A Student view responsible for
+     - Update/Delete in Student model.
+    """
+    form_class = StudentForm
+    model = Student
+    success_url = '/student/'
+    template_name = "student/student.html"
+
+    def get_context_data(self, **kwargs):
+        """
+        Update CreateView context with "list" of Students.
+        """
+        kwargs['object_list'] = Student.objects.all()
+        return super(StudentUpdateView, self).get_context_data(**kwargs)

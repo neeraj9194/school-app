@@ -22,10 +22,28 @@ class Teacher(models.Model):
     student = models.ManyToManyField(
         Student,
         help_text="Students taught by the teacher",
-        related_name="teacher"
+        related_name="teacher",
+        through='StudentTeacherRelation'
     )
     # image =
 
     def __str__(self):
         return str(self.first_name) + " " + str(self.last_name)
 
+
+class StudentTeacherRelation(models.Model):
+    """
+    A relationship model between Student and Teacher with a star boolean that
+    can be marked by a teacher for a student.
+    """
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
+
+    is_starred = models.BooleanField(
+        default=False,
+        help_text="Whether student is starred by the teacher."
+    )
+    date_starred = models.DateTimeField(
+        help_text="Date time the student is starred.",
+        null=True, blank=True
+    )
