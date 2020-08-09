@@ -4,7 +4,14 @@ from student.models import Student
 
 
 class StudentAdmin(admin.ModelAdmin):
-    pass
+    list_display = (
+        'id',
+        'roll_number',
+        'first_name',
+        'last_name',
+        'dob',
+        'stream'
+    )
 
 
 admin.site.register(Student, StudentAdmin)

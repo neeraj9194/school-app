@@ -1,12 +1,7 @@
-from datetime import datetime
-
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
 from django.views.generic import CreateView, UpdateView, DeleteView
 
-from student.forms import StudentForm, StudentStarForm
+from student.forms import StudentForm
 from student.models import Student
-from teacher.models import StudentTeacherRelation
 
 
 class StudentView(CreateView):
@@ -24,7 +19,6 @@ class StudentView(CreateView):
         Update CreateView context with "list" of Students.
         """
         kwargs['object_list'] = Student.objects.all()
-        kwargs['star_form'] = StudentStarForm()
         return super(StudentView, self).get_context_data(**kwargs)
 
     def get(self, request, *args, **kwargs):
@@ -63,24 +57,3 @@ class StudentDeleteView(DeleteView):
     model = Student
     success_url = '/student/'
     template_name = "student/student.html"
-
-
-def add_star(request, pk):
-    """
-    Star a student.
-    """
-    if request.method == 'POST':
-        form = StudentStarForm(request.POST)
-        if form.is_valid():
-            relationship = StudentTeacherRelation.objects.get(
-                student_id=pk,
-                teacher=form.cleaned_data['teacher'],
-            )
-            relationship.is_starred = True
-            relationship.date_starred = datetime.now()
-            relationship.save()
-            return HttpResponseRedirect('/student/')
-    else:
-        form = StudentStarForm()
-
-    return render(request, 'student/student.html', {'star_form': form})
