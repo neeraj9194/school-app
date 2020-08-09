@@ -1,45 +1,56 @@
 {% extends "school/base.html" %}
 
 {% block list-block %}
-<h3>List of Teachers</h3>
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th scope="col">First Name</th>
-    <th scope="col">Last Name</th>
-    <th scope="col">Subject</th>
-    <th scope="col">Students</th>
-    <th scope="col">Action</th>
-  </tr>
-  </thead>
-  <tbody>
-  {% for teacher in object_list %}
-  <tr>
-    <td scope="row">{{ teacher.first_name }}</td>
-    <td>{{ teacher.last_name }}</td>
-    <td>{{ teacher.subject }}</td>
-    <td>
-    {% for student in teacher.student.all %}
-    {{ student.first_name }},
+  <div class="card bg-primary text-white">
+    <div class="card-header table-header container-fluid">
+      <div class="row">
+        <div class="col-md-10"><h4 class="">List of Teachers</h4></div>
+        <div class="col-md-2">
+          <button type="button" data-toggle="modal" data-target="#addTeacherModal"
+                  class="btn btn-success float-right align-middle">
+            <span><i class="fas fa-plus"></i> Add Teacher</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Students</th>
+      <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for teacher in object_list %}
+      <tr>
+        <td scope="row">{{ teacher.first_name }}</td>
+        <td>{{ teacher.last_name }}</td>
+        <td>{{ teacher.subject }}</td>
+        <td>
+          {% for student in teacher.student.all %}
+            {{ student.first_name }},
+          {% endfor %}
+        </td>
+        <td>
+          <a class="btn btn-primary edit-button" href="/teacher/{{ teacher.id }}/" role="button">
+            <i class="fas fa-edit"></i>
+          </a>
+          <a class="btn btn-danger delete-button" role="button"
+             data-toggle="modal" data-target="#deleteModal" data-url="/teacher/{{ teacher.id }}/delete/"
+          >
+            <i class="fas fa-trash"></i>
+          </a>
+        </td>
+      </tr>
     {% endfor %}
-    </td>
-    <td>
-      <a class="btn btn-primary edit-button" href="/teacher/{{ teacher.id }}/" role="button">
-        <i class="fas fa-edit"></i>
-      </a>
-      <a class="btn btn-danger delete-button" role="button"
-         data-toggle="modal" data-target="#deleteModal" data-url="/teacher/{{ teacher.id }}/delete/"
-      >
-        <i class="fas fa-trash"></i>
-      </a>
-    </td>
-  </tr>
-  {% endfor %}
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addTeacherModal" >Add New Teacher</button>
-
-{% include "school/create-modal.html"  with modal_name="addTeacherModal" modal_header="Add Teacher" %}
-{% include "school/delete-modal.html" %}
+  {% include "school/create-modal.html"  with modal_name="addTeacherModal" modal_header="Add Teacher" %}
+  {% include "school/delete-modal.html" %}
 {% endblock %}

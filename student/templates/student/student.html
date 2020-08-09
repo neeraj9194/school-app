@@ -1,46 +1,54 @@
 {% extends "school/base.html" %}
 
 {% block list-block %}
-<h3>List of students</h3>
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">First</th>
-    <th scope="col">Last</th>
-    <th scope="col">Date of Birth</th>
-    <th scope="col">Stream</th>
-    <th scope="col">Action</th>
-  </tr>
-  </thead>
-  <tbody>
-  {% for student in object_list %}
-  <tr>
-    <th scope="row">{{ student.roll_number }}</th>
-    <td>{{ student.first_name }}</td>
-    <td>{{ student.last_name }}</td>
-    <td>{{ student.dob }}</td>
-    <td>{{ student.stream }}</td>
-    <td>
-      <a class="btn btn-primary edit-button" href="/student/{{ student.id }}/" role="button">
-        <i class="fas fa-edit"></i>
-      </a>
-      <a class="btn btn-danger delete-button" role="button"
-         data-toggle="modal" data-target="#deleteModal" data-url="/student/{{ student.id }}/delete/">
-        <i class="fas fa-trash"></i>
-      </a>
-    </td>
-  </tr>
-  {% endfor %}
-  </tbody>
-</table>
+  <div class="card bg-primary text-white">
+    <div class="card-header table-header container-fluid">
+      <div class="row">
+        <div class="col-md-10"><h4 class="">List of students</h4></div>
+        <div class="col-md-2">
+          <button type="button" data-toggle="modal" data-target="#addStudentModal"
+                  class="btn btn-success float-right align-middle">
+            <span><i class="fas fa-plus"></i> Add Student</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Date of Birth</th>
+      <th scope="col">Stream</th>
+      <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for student in object_list %}
+      <tr>
+        <th scope="row">{{ student.roll_number }}</th>
+        <td>{{ student.first_name }}</td>
+        <td>{{ student.last_name }}</td>
+        <td>{{ student.dob }}</td>
+        <td>{{ student.stream }}</td>
+        <td>
+          <a class="btn btn-primary edit-button" href="/student/{{ student.id }}/" role="button">
+            <i class="fas fa-edit"></i>
+          </a>
+          <a class="btn btn-danger delete-button" role="button"
+             data-toggle="modal" data-target="#deleteModal" data-url="/student/{{ student.id }}/delete/">
+            <i class="fas fa-trash"></i>
+          </a>
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
 
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addStudentModal" >
-  Add New Student
-</button>
-
-{% include "school/create-modal.html"  with modal_name="addStudentModal" modal_header="Add Student" %}
-{% include "school/delete-modal.html" %}
+  {% include "school/create-modal.html"  with modal_name="addStudentModal" modal_header="Add Student" %}
+  {% include "school/delete-modal.html" %}
 {% endblock %}
 
 

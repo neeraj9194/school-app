@@ -5,3 +5,11 @@
 .delete-button {
     padding: 5px 10px;
 }
+
+.table-header {
+    border-bottom: unset;
+}
+
+main {
+    margin-top: 2rem;
+}
