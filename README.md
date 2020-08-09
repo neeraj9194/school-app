@@ -24,17 +24,18 @@ Coming Soon...
 
 ## TODO
 
-- [ ] Complete readme docs.
-- [x] Relationship for Rewards(Stars).
 - [ ] Dashboard
-- [ ] Image Upload ??
-- [ ] Change Roll number to "Student ID"
-- [ ] Add Staff ID in teacher model
-- [ ] Search in list
+- [ ] Complete readme docs.
+- [ ] Add fixture generator.
+- [ ] Complete `docker-compose up`
+- [x] Relationship for Rewards(Stars).
+- [ ] Include code coverage numbers/details in the README or your response.
 - [x] Login
 - [ ] Add unit tests as well as appropriate. 
-- [ ] Include code coverage numbers/details in the README or your response.
-- [ ] Add fixture generator.
+- [ ] Search in list
+- [ ] Image Upload ??
+- [ ] Add Staff ID in teacher model
+- [ ] Change Roll number to "Student ID"
 
 
 
