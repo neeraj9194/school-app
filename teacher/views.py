@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.views.generic import CreateView, UpdateView, DeleteView
 
@@ -5,7 +6,7 @@ from teacher.forms import TeacherForm
 from teacher.models import Teacher
 
 
-class TeacherView(CreateView):
+class TeacherView(LoginRequiredMixin, CreateView):
     """
     A Teacher view responsible to Create/List Teacher model.
     """
