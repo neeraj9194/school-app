@@ -32,10 +32,9 @@ class StudentView(CreateView):
         return self.render_to_response(self.get_context_data())
 
 
-class StudentUpdateView(UpdateView, DeleteView):
+class StudentUpdateView(UpdateView):
     """
-    A Student view responsible for
-     - Update/Delete in Student model.
+    A Student view responsible to Update in Student model.
     """
     form_class = StudentForm
     model = Student
@@ -48,3 +47,13 @@ class StudentUpdateView(UpdateView, DeleteView):
         """
         kwargs['object_list'] = Student.objects.all()
         return super(StudentUpdateView, self).get_context_data(**kwargs)
+
+
+class StudentDeleteView(DeleteView):
+    """
+    A Student view responsible for Delete an object in Student model.
+    """
+    form_class = StudentForm
+    model = Student
+    success_url = '/student/'
+    template_name = "student/student.html"

@@ -6,8 +6,7 @@ from teacher.models import Teacher
 
 class TeacherView(CreateView):
     """
-    A Teacher view responsible for
-     - Create/List in Teacher model.
+    A Teacher view responsible to Create/List Teacher model.
     """
     form_class = TeacherForm
     model = Teacher
@@ -22,10 +21,9 @@ class TeacherView(CreateView):
         return super(TeacherView, self).get_context_data(**kwargs)
 
 
-class TeacherUpdateView(UpdateView, DeleteView):
+class TeacherUpdateView(UpdateView):
     """
-    A Teacher view responsible for
-     - Update/Delete in Teacher model.
+    A Teacher view responsible to Update object in Teacher model.
     """
     form_class = TeacherForm
     model = Teacher
@@ -38,3 +36,13 @@ class TeacherUpdateView(UpdateView, DeleteView):
         """
         kwargs['object_list'] = Teacher.objects.all().prefetch_related('student')
         return super(TeacherUpdateView, self).get_context_data(**kwargs)
+
+
+class TeacherDeleteView(DeleteView):
+    """
+    A Teacher view responsible to Delete in Teacher model.
+    """
+    form_class = TeacherForm
+    model = Teacher
+    success_url = '/teacher/'
+    template_name = "teacher.html"
