@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import CreateView, UpdateView, DeleteView
 
-from student.models import Student
 from teacher.forms import TeacherForm
 from teacher.models import Teacher
 
@@ -51,7 +50,10 @@ class TeacherDeleteView(DeleteView):
 
 
 def reward_list(request):
-    students = Student.objects.filter(
-        studentteacherrelation__is_starred=True
-    ).prefetch_related('teacher').distinct()
-    return render(request, 'rewards.html', {'students': students})
+    """
+    List all teachers with their students with star status.
+    """
+    teachers = Teacher.objects.all().prefetch_related(
+        'studentteacherrelation_set__student'
+    ).distinct()
+    return render(request, 'rewards.html', {'teachers': teachers})
