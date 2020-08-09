@@ -6,6 +6,10 @@
     padding: 5px 10px;
 }
 
+.star-button i {
+    color: white;
+}
+
 .table-header {
     border-bottom: unset;
 }

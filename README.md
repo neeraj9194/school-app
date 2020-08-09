@@ -32,6 +32,8 @@ Coming Soon...
 - [ ] Add Staff ID in teacher model
 - [ ] Search in list
 - [ ] Login
+- [ ] Add unit tests as well as appropriate. 
+- [ ] Include code coverage numbers/details in the README or your response.
 
 
 

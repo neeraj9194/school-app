@@ -90,10 +90,10 @@
             window.location.href = '/'+ url_name + '/';
         });
 
-        {# Delete modal should get ID from list table #}
-        $('#deleteModal').on('show.bs.modal', function (event) {
+        {# Delete/Star modal should get ID from list table #}
+        $('#deleteModal,#starModal').on('show.bs.modal', function (event) {
             let button = $(event.relatedTarget);
-            $('#deleteModal form').attr("action", button.data('url'));
+            event.target.querySelector('form').setAttribute("action", button.data('url'))
         });
 
     });
