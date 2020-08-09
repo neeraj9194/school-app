@@ -38,6 +38,12 @@
               Teacher
             </a>
           </li>
+          <li class="nav-item">
+            <a id="reward-tab" class="nav-link" href="/teacher/rewards/">
+              <i class="fa fa-star"></i>
+              Rewards
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -75,7 +81,7 @@
         else if(url_name === "teacher") {
             modal_name = "#addTeacherModal"
         }
-        if (url_id != null || modal_name != null){
+        if (url_id != null && !isNaN(url_id) && modal_name != null){
             $(modal_name).modal("show");
         }
 

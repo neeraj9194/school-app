@@ -1,0 +1,35 @@
+{% extends "school/base.html" %}
+{% load starred_filter %}
+{% block list-block %}
+  <div class="card bg-primary text-white">
+    <div class="card-header table-header container-fluid">
+      <div class="row">
+        <div class="col-md-10"><h4 class="">Students received stars</h4></div>
+      </div>
+    </div>
+  </div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Teacher Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for student in students %}
+      <tr>
+        <td>{{ student.first_name }} {{ student.last_name }}</td>
+        <td>
+          {% for teacher in student.teacher|filter_starred %}
+            {{ teacher.first_name }} {{teacher.last_name }}<br>
+          {% endfor %}
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+  {% include "school/create-modal.html"  with modal_name="addTeacherModal" modal_header="Add Teacher" %}
+  {% include "school/delete-modal.html" %}
+{% endblock %}
