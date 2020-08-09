@@ -1,10 +1,11 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView, UpdateView, DeleteView
 
 from student.forms import StudentForm
 from student.models import Student
 
 
-class StudentView(CreateView):
+class StudentView(LoginRequiredMixin, CreateView):
     """
     A Student view responsible for
      - Create/List in Student model.
@@ -32,7 +33,7 @@ class StudentView(CreateView):
         return self.render_to_response(self.get_context_data())
 
 
-class StudentUpdateView(UpdateView):
+class StudentUpdateView(LoginRequiredMixin, UpdateView):
     """
     A Student view responsible to Update in Student model.
     """
@@ -49,7 +50,7 @@ class StudentUpdateView(UpdateView):
         return super(StudentUpdateView, self).get_context_data(**kwargs)
 
 
-class StudentDeleteView(DeleteView):
+class StudentDeleteView(LoginRequiredMixin, DeleteView):
     """
     A Student view responsible for Delete an object in Student model.
     """

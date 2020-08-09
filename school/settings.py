@@ -129,3 +129,7 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_URL = '/static/'
+
+
+LOGOUT_REDIRECT_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'

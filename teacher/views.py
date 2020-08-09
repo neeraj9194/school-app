@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.views.generic import CreateView, UpdateView, DeleteView
@@ -23,7 +24,7 @@ class TeacherView(LoginRequiredMixin, CreateView):
         return super(TeacherView, self).get_context_data(**kwargs)
 
 
-class TeacherUpdateView(UpdateView):
+class TeacherUpdateView(LoginRequiredMixin, UpdateView):
     """
     A Teacher view responsible to Update object in Teacher model.
     """
@@ -40,7 +41,7 @@ class TeacherUpdateView(UpdateView):
         return super(TeacherUpdateView, self).get_context_data(**kwargs)
 
 
-class TeacherDeleteView(DeleteView):
+class TeacherDeleteView(LoginRequiredMixin, DeleteView):
     """
     A Teacher view responsible to Delete in Teacher model.
     """
@@ -50,6 +51,7 @@ class TeacherDeleteView(DeleteView):
     template_name = "teacher.html"
 
 
+@login_required
 def reward_list(request):
     """
     List all teachers with their students with star status.

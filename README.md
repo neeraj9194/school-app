@@ -25,13 +25,13 @@ Coming Soon...
 ## TODO
 
 - [ ] Complete readme docs.
-- [ ] Relationship for Rewards(Stars).
+- [x] Relationship for Rewards(Stars).
 - [ ] Dashboard
 - [ ] Image Upload ??
 - [ ] Change Roll number to "Student ID"
 - [ ] Add Staff ID in teacher model
 - [ ] Search in list
-- [ ] Login
+- [x] Login
 - [ ] Add unit tests as well as appropriate. 
 - [ ] Include code coverage numbers/details in the README or your response.
 - [ ] Add fixture generator.

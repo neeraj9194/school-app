@@ -1,6 +1,9 @@
 from datetime import datetime
 
-from rest_framework.decorators import api_view
+from rest_framework.authentication import SessionAuthentication
+from rest_framework.decorators import api_view, authentication_classes, \
+    permission_classes
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.status import HTTP_204_NO_CONTENT, HTTP_404_NOT_FOUND
 
@@ -8,6 +11,8 @@ from teacher.models import StudentTeacherRelation
 
 
 @api_view(['POST'])
+@authentication_classes([SessionAuthentication])
+@permission_classes([IsAuthenticated])
 def add_star(request, teacher_id, student_id):
     """
     API to add star from a student.
@@ -25,6 +30,8 @@ def add_star(request, teacher_id, student_id):
 
 
 @api_view(['POST'])
+@authentication_classes([SessionAuthentication])
+@permission_classes([IsAuthenticated])
 def remove_star(request, teacher_id, student_id):
     """
     API to remove star from a student.

@@ -1,6 +1,7 @@
 from datetime import date
 
 # Create your tests here.
+from django.contrib.auth.models import User
 from rest_framework.test import APITestCase
 
 from student.models import Student
@@ -21,6 +22,10 @@ class TestRewardAPI(APITestCase):
             last_name="Mcclane",
             subject="CS",
         )
+        # Auth
+        user1 = User.objects.create(username='test_1', first_name='test_1',
+                                    last_name='test1')
+        self.client.force_authenticate(user=user1)
 
     def test_404_add_star(self):
         """
