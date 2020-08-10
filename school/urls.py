@@ -18,10 +18,15 @@ from django.contrib.auth.decorators import login_required
 from django.urls import path, include
 from django.views.generic import TemplateView
 
+from school.api import dashboard_stats
+
 urlpatterns = [
     path('', login_required(TemplateView.as_view(template_name="school/dashboard.html"))),
     path('admin/', admin.site.urls),
     path('student/', include('student.urls')),
     path('teacher/', include('teacher.urls')),
-    path('accounts/', include('django.contrib.auth.urls'))
+    path('accounts/', include('django.contrib.auth.urls')),
+
+    # REST APIs
+    path('dashboard/stats/', dashboard_stats)
 ]

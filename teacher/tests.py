@@ -35,7 +35,7 @@ class TestRewardAPI(APITestCase):
             '/teacher/{t_id}/reward/student/{s_id}/remove/'.format(
                 t_id=self.teacher1.id, s_id=self.student1.id), format='json'
         )
-        self.assertEquals(404, response.status_code)
+        self.assertEqual(404, response.status_code)
 
     def test_add_star(self):
         """
@@ -50,7 +50,7 @@ class TestRewardAPI(APITestCase):
             '/teacher/{t_id}/reward/student/{s_id}/add/'.format(
                 t_id=self.teacher1.id, s_id=self.student1.id), format='json'
         )
-        self.assertEquals(204, response.status_code)
+        self.assertEqual(204, response.status_code)
         relation_changed = StudentTeacherRelation.objects.get(id=relation.id)
         self.assertEqual(True, relation_changed.is_starred)
 
@@ -62,11 +62,12 @@ class TestRewardAPI(APITestCase):
         relation = StudentTeacherRelation.objects.create(
             teacher=self.teacher1,
             student=self.student1,
+            is_starred=True
         )
         response = self.client.post(
             '/teacher/{t_id}/reward/student/{s_id}/remove/'.format(
                 t_id=self.teacher1.id, s_id=self.student1.id), format='json'
         )
-        self.assertEquals(204, response.status_code)
+        self.assertEqual(204, response.status_code)
         relation_changed = StudentTeacherRelation.objects.get(id=relation.id)
         self.assertEqual(False, relation_changed.is_starred)
