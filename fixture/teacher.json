@@ -1,0 +1,572 @@
+[
+  {
+    "model": "teacher.teacher",
+    "pk": 1,
+    "fields": {
+      "first_name": "Ameline",
+      "last_name": "Esome",
+      "subject": "Arctic lemming"
+    }
+  },
+  {
+    "model": "teacher.teacher",
+    "pk": 2,
+    "fields": {
+      "first_name": "Warren",
+      "last_name": "Philbrick",
+      "subject": "Crested porcupine"
+    }
+  },
+  {
+    "model": "teacher.teacher",
+    "pk": 3,
+    "fields": {
+      "first_name": "Allix",
+      "last_name": "Rumke",
+      "subject": "Roller, lilac-breasted"
+    }
+  },
+  {
+    "model": "teacher.teacher",
+    "pk": 4,
+    "fields": {
+      "first_name": "Glendon",
+      "last_name": "Wilcocke",
+      "subject": "Great cormorant"
+    }
+  },
+  {
+    "model": "teacher.teacher",
+    "pk": 5,
+    "fields": {
+      "first_name": "Genovera",
+      "last_name": "Pasley",
+      "subject": "Hyena, striped"
+    }
+  },
+  {
+    "model": "teacher.teacher",
+    "pk": 6,
+    "fields": {
+      "first_name": "Malvin",
+      "last_name": "Swendell",
+      "subject": "Great kiskadee"
+    }
+  },
+  {
+    "model": "teacher.teacher",
+    "pk": 7,
+    "fields": {
+      "first_name": "Angelica",
+      "last_name": "Warry",
+      "subject": "Barking gecko"
+    }
+  },
+  {
+    "model": "teacher.teacher",
+    "pk": 8,
+    "fields": {
+      "first_name": "Wallas",
+      "last_name": "Feragh",
+      "subject": "Verreaux's sifaka"
+    }
+  },
+  {
+    "model": "teacher.teacher",
+    "pk": 9,
+    "fields": {
+      "first_name": "Cash",
+      "last_name": "Oulett",
+      "subject": "Common genet"
+    }
+  },
+  {
+    "model": "teacher.teacher",
+    "pk": 10,
+    "fields": {
+      "first_name": "Karlens",
+      "last_name": "Strowan",
+      "subject": "Pied butcher bird"
+    }
+  },
+  {
+    "model": "teacher.teacher",
+    "pk": 11,
+    "fields": {
+      "first_name": "Sebastian",
+      "last_name": "Trewinnard",
+      "subject": "Long-necked turtle"
+    }
+  },
+  {
+    "model": "teacher.teacher",
+    "pk": 12,
+    "fields": {
+      "first_name": "Abbie",
+      "last_name": "Shivell",
+      "subject": "Heron, green"
+    }
+  },
+  {
+    "model": "teacher.teacher",
+    "pk": 13,
+    "fields": {
+      "first_name": "Arden",
+      "last_name": "Percifull",
+      "subject": "Crane, black-crowned"
+    }
+  },
+  {
+    "model": "teacher.teacher",
+    "pk": 14,
+    "fields": {
+      "first_name": "Jessy",
+      "last_name": "Desbrow",
+      "subject": "Heron, green-backed"
+    }
+  },
+  {
+    "model": "teacher.teacher",
+    "pk": 15,
+    "fields": {
+      "first_name": "Wald",
+      "last_name": "Chinery",
+      "subject": "American bison"
+    }
+  },
+  {
+    "model": "teacher.teacher",
+    "pk": 16,
+    "fields": {
+      "first_name": "Tybalt",
+      "last_name": "Thewless",
+      "subject": "Kongoni"
+    }
+  },
+  {
+    "model": "teacher.teacher",
+    "pk": 17,
+    "fields": {
+      "first_name": "Kristofer",
+      "last_name": "Ebanks",
+      "subject": "Lappet-faced vulture"
+    }
+  },
+  {
+    "model": "teacher.teacher",
+    "pk": 18,
+    "fields": {
+      "first_name": "Gerry",
+      "last_name": "Fowlds",
+      "subject": "Bulbul, black-fronted"
+    }
+  },
+  {
+    "model": "teacher.teacher",
+    "pk": 19,
+    "fields": {
+      "first_name": "Ulises",
+      "last_name": "Quittonden",
+      "subject": "Common palm civet"
+    }
+  },
+  {
+    "model": "teacher.teacher",
+    "pk": 20,
+    "fields": {
+      "first_name": "Haskell",
+      "last_name": "Ironmonger",
+      "subject": "White-browed owl"
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 1,
+    "fields": {
+      "student": 6,
+      "teacher": 11,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 2,
+    "fields": {
+      "student": 11,
+      "teacher": 12,
+      "is_starred": true,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 3,
+    "fields": {
+      "student": 16,
+      "teacher": 17,
+      "is_starred": true,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 4,
+    "fields": {
+      "student": 10,
+      "teacher": 17,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 5,
+    "fields": {
+      "student": 14,
+      "teacher": 12,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 6,
+    "fields": {
+      "student": 15,
+      "teacher": 3,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 7,
+    "fields": {
+      "student": 6,
+      "teacher": 5,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 8,
+    "fields": {
+      "student": 20,
+      "teacher": 13,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 9,
+    "fields": {
+      "student": 6,
+      "teacher": 20,
+      "is_starred": true,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 10,
+    "fields": {
+      "student": 6,
+      "teacher": 18,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 11,
+    "fields": {
+      "student": 12,
+      "teacher": 8,
+      "is_starred": true,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 12,
+    "fields": {
+      "student": 17,
+      "teacher": 16,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 13,
+    "fields": {
+      "student": 2,
+      "teacher": 3,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 14,
+    "fields": {
+      "student": 20,
+      "teacher": 10,
+      "is_starred": true,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 15,
+    "fields": {
+      "student": 4,
+      "teacher": 20,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 16,
+    "fields": {
+      "student": 17,
+      "teacher": 2,
+      "is_starred": true,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 17,
+    "fields": {
+      "student": 6,
+      "teacher": 10,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 18,
+    "fields": {
+      "student": 6,
+      "teacher": 6,
+      "is_starred": true,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 19,
+    "fields": {
+      "student": 18,
+      "teacher": 2,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 20,
+    "fields": {
+      "student": 19,
+      "teacher": 19,
+      "is_starred": true,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 21,
+    "fields": {
+      "student": 19,
+      "teacher": 14,
+      "is_starred": true,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 22,
+    "fields": {
+      "student": 17,
+      "teacher": 7,
+      "is_starred": true,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 23,
+    "fields": {
+      "student": 7,
+      "teacher": 4,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 25,
+    "fields": {
+      "student": 15,
+      "teacher": 14,
+      "is_starred": true,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 26,
+    "fields": {
+      "student": 15,
+      "teacher": 4,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 27,
+    "fields": {
+      "student": 7,
+      "teacher": 14,
+      "is_starred": true,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 28,
+    "fields": {
+      "student": 10,
+      "teacher": 19,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 29,
+    "fields": {
+      "student": 8,
+      "teacher": 16,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 30,
+    "fields": {
+      "student": 2,
+      "teacher": 7,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 31,
+    "fields": {
+      "student": 20,
+      "teacher": 4,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 32,
+    "fields": {
+      "student": 14,
+      "teacher": 17,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 33,
+    "fields": {
+      "student": 4,
+      "teacher": 1,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 34,
+    "fields": {
+      "student": 14,
+      "teacher": 8,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 35,
+    "fields": {
+      "student": 12,
+      "teacher": 3,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 36,
+    "fields": {
+      "student": 2,
+      "teacher": 12,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 37,
+    "fields": {
+      "student": 4,
+      "teacher": 11,
+      "is_starred": true,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 38,
+    "fields": {
+      "student": 7,
+      "teacher": 17,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 39,
+    "fields": {
+      "student": 10,
+      "teacher": 13,
+      "is_starred": false,
+      "date_starred": null
+    }
+  },
+  {
+    "model": "teacher.studentteacherrelation",
+    "pk": 40,
+    "fields": {
+      "student": 6,
+      "teacher": 16,
+      "is_starred": false,
+      "date_starred": null
+    }
+  }
+]

@@ -19,7 +19,13 @@
     <tbody>
     {% for teacher in teachers %}
       <tr>
-        <td style="" rowspan="{{ teacher.student.count }}">{{ teacher.first_name }} {{ teacher.last_name }}</td>
+        {% if teacher.student.count %}
+          <td rowspan="{{ teacher.student.count }}">{{ teacher.first_name }} {{ teacher.last_name }}</td>
+        {% else %}
+          <td>{{ teacher.first_name }} {{ teacher.last_name }}</td>
+          <td></td><td></td>
+          </tr>
+        {% endif %}
         {% for relation in teacher.studentteacherrelation_set.all %}
           <td>
             {{ relation.student.first_name }} {{ relation.student.last_name }}

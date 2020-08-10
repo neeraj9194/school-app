@@ -1,0 +1,222 @@
+[
+  {
+    "model": "student.student",
+    "pk": 1,
+    "fields": {
+      "first_name": "Gannon",
+      "last_name": "Chart",
+      "dob": "2012-07-04",
+      "stream": "Manatee",
+      "roll_number": "10534"
+    }
+  },
+  {
+    "model": "student.student",
+    "pk": 2,
+    "fields": {
+      "first_name": "Kassie",
+      "last_name": "Vedyasov",
+      "dob": "2001-01-22",
+      "stream": "Civet, common palm",
+      "roll_number": "18768"
+    }
+  },
+  {
+    "model": "student.student",
+    "pk": 3,
+    "fields": {
+      "first_name": "Wilona",
+      "last_name": "Brome",
+      "dob": "2010-07-22",
+      "stream": "Possum, ring-tailed",
+      "roll_number": "87340"
+    }
+  },
+  {
+    "model": "student.student",
+    "pk": 4,
+    "fields": {
+      "first_name": "Brnaby",
+      "last_name": "Crisp",
+      "dob": "2008-06-06",
+      "stream": "Starling, greater blue-eared",
+      "roll_number": "82395"
+    }
+  },
+  {
+    "model": "student.student",
+    "pk": 5,
+    "fields": {
+      "first_name": "Kamila",
+      "last_name": "Durrad",
+      "dob": "2013-06-01",
+      "stream": "Two-toed sloth",
+      "roll_number": "71485"
+    }
+  },
+  {
+    "model": "student.student",
+    "pk": 6,
+    "fields": {
+      "first_name": "Verney",
+      "last_name": "Jessope",
+      "dob": "1990-09-09",
+      "stream": "Deer, white-tailed",
+      "roll_number": "85422"
+    }
+  },
+  {
+    "model": "student.student",
+    "pk": 7,
+    "fields": {
+      "first_name": "Kelwin",
+      "last_name": "O'Keevan",
+      "dob": "2016-04-11",
+      "stream": "Argalis",
+      "roll_number": "62952"
+    }
+  },
+  {
+    "model": "student.student",
+    "pk": 8,
+    "fields": {
+      "first_name": "Horton",
+      "last_name": "Cochrane",
+      "dob": "1992-10-27",
+      "stream": "Crane, wattled",
+      "roll_number": "94639"
+    }
+  },
+  {
+    "model": "student.student",
+    "pk": 9,
+    "fields": {
+      "first_name": "Hermon",
+      "last_name": "Daviot",
+      "dob": "1999-09-07",
+      "stream": "Blue fox",
+      "roll_number": "17430"
+    }
+  },
+  {
+    "model": "student.student",
+    "pk": 10,
+    "fields": {
+      "first_name": "Keane",
+      "last_name": "Addy",
+      "dob": "1993-10-08",
+      "stream": "American black bear",
+      "roll_number": "42904"
+    }
+  },
+  {
+    "model": "student.student",
+    "pk": 11,
+    "fields": {
+      "first_name": "Marco",
+      "last_name": "Studeart",
+      "dob": "1991-04-24",
+      "stream": "Spur-winged goose",
+      "roll_number": "58081"
+    }
+  },
+  {
+    "model": "student.student",
+    "pk": 12,
+    "fields": {
+      "first_name": "Erin",
+      "last_name": "Coaten",
+      "dob": "1999-05-17",
+      "stream": "Pelican, eastern white",
+      "roll_number": "79206"
+    }
+  },
+  {
+    "model": "student.student",
+    "pk": 13,
+    "fields": {
+      "first_name": "Correy",
+      "last_name": "Duran",
+      "dob": "2001-01-14",
+      "stream": "Baleen whale",
+      "roll_number": "06996"
+    }
+  },
+  {
+    "model": "student.student",
+    "pk": 14,
+    "fields": {
+      "first_name": "Elyn",
+      "last_name": "MacHoste",
+      "dob": "1995-02-25",
+      "stream": "Macaw, green-winged",
+      "roll_number": "02238"
+    }
+  },
+  {
+    "model": "student.student",
+    "pk": 15,
+    "fields": {
+      "first_name": "Cyndia",
+      "last_name": "Richfield",
+      "dob": "2012-09-06",
+      "stream": "Richardson's ground squirrel",
+      "roll_number": "02616"
+    }
+  },
+  {
+    "model": "student.student",
+    "pk": 16,
+    "fields": {
+      "first_name": "Jefferson",
+      "last_name": "Wakeley",
+      "dob": "1994-02-09",
+      "stream": "Chilean flamingo",
+      "roll_number": "23296"
+    }
+  },
+  {
+    "model": "student.student",
+    "pk": 17,
+    "fields": {
+      "first_name": "Fionnula",
+      "last_name": "Winsiowiecki",
+      "dob": "1994-09-15",
+      "stream": "Mongoose, yellow",
+      "roll_number": "62240"
+    }
+  },
+  {
+    "model": "student.student",
+    "pk": 18,
+    "fields": {
+      "first_name": "Demetris",
+      "last_name": "McCaighey",
+      "dob": "2003-07-31",
+      "stream": "Vicuna",
+      "roll_number": "90986"
+    }
+  },
+  {
+    "model": "student.student",
+    "pk": 19,
+    "fields": {
+      "first_name": "Ashby",
+      "last_name": "Edgeley",
+      "dob": "1995-01-07",
+      "stream": "Cormorant (unidentified)",
+      "roll_number": "38746"
+    }
+  },
+  {
+    "model": "student.student",
+    "pk": 20,
+    "fields": {
+      "first_name": "Celinda",
+      "last_name": "Dillingstone",
+      "dob": "1995-06-05",
+      "stream": "Sally lightfoot crab",
+      "roll_number": "89197"
+    }
+  }
+]
