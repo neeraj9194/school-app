@@ -1,0 +1,47 @@
+{% extends "school/base.html" %}
+
+{% block list-block %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card bg-primary card-counter text-white">
+          <i class="fa fa-users"></i>
+          <span class="count-numbers">12</span>
+          <span class="count-name">Students</span>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card bg-danger card-counter text-white">
+          <i class="fa fa-graduation-cap"></i>
+          <span class="count-numbers">599</span>
+          <span class="count-name">Teachers</span>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card bg-success card-counter text-white">
+          <i class="fa fa-star"></i>
+          <span class="count-numbers">6875</span>
+          <span class="count-name">Stars</span>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block end-script-block %}
+  <script>
+      /*
+      * Call Stats API to load data into cards..
+      * */
+      $(document).ready(function (el){
+          let baseUrl = window.location.origin;
+          let url = baseUrl + "/dashboard/stats/";
+          $.post(url, {}, function (data, status){
+              location.reload();
+          });
+      });
+  </script>
+{% endblock %}
+

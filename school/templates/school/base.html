@@ -11,14 +11,18 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="{% static 'school/style.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'school/sidebar.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'school/dashboard.css' %}">
   <link rel="shortcut icon" type="image/png" href="{% static 'school/favicon.ico' %}"/>
   <title>SCHOOL APP</title>
 </head>
 <body>
 <div class="container-fluid">
   <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
       <div class="sidebar-sticky pt-3">
+        <div class="container">
+          <img src="{% static 'school/school-logo.svg' %}">
+        </div>
         <ul class="nav flex-column nav-tabs">
           <li class="nav-item">
             <a id="dashboard-tab" class="nav-link" href="/">
@@ -105,6 +109,24 @@
         });
 
     });
+    /*
+    * Get Cookie give the name https://www.w3schools.com/js/js_cookies.asp
+    * */
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i <ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
 </script>
 {% block end-script-block %}{% endblock %}
 </body>

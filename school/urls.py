@@ -19,7 +19,7 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    path('', login_required(TemplateView.as_view(template_name="school/base.html"))),
+    path('', login_required(TemplateView.as_view(template_name="school/dashboard.html"))),
     path('admin/', admin.site.urls),
     path('student/', include('student.urls')),
     path('teacher/', include('teacher.urls')),

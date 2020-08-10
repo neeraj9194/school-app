@@ -10,6 +10,7 @@
   z-index: 100; /* Behind the navbar */
   padding: 48px 0 0; /* Height of navbar */
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+  background-color: #f5f5f5;
 }
 
 .sidebar-sticky {
@@ -19,6 +20,10 @@
   padding-top: .5rem;
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.sidebar-sticky ul {
+  margin-top: 2rem;
 }
 
 @supports ((position: -webkit-sticky) or (position: sticky)) {
@@ -31,6 +36,6 @@
 .sidebar-bottom {
   position: absolute;
   display: inline-block;
-  bottom: 0;
+  bottom: 10px;
   width: 100%;
 }
