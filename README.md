@@ -46,6 +46,28 @@ username: testuser
 password: testpassword
 ```
 
+## Testing
+Test are written only for REST APIs.
+```
+Test files:
+teacher/tests.py
+school/tests.py
+```
+
+**To run test.**
+```
+docker-compose run web ./manage.py test
+```
+**And to generate coverage report.**
+```
+docker-compose run web coverage run --source='.' manage.py test
+docker-compose run web coverage html
+```
+A dir named `htmlcov` will be created, open `index.html` from inside it to view coverage report.
+
+#### Coverage report: 85%
+ 
+
 ## TODO
 
 - [x] Dashboard
@@ -53,7 +75,7 @@ password: testpassword
 - [x] Add fixture generator.
 - [x] Complete `docker-compose up`
 - [x] Relationship for Rewards(Stars).
-- [ ] Include code coverage numbers/details in the README or your response.
+- [x] Include code coverage numbers/details in the README or your response.
 - [x] Login
 - [x] Add unit tests as well as appropriate. 
 - [ ] Search in list
