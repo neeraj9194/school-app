@@ -36,8 +36,16 @@ bin/load-fixture.sh
 ```
 docker-compose up
 ```
-
 _Note: use `sudo` if permission issue._
+
+### Webapp
+Fixture will create a default username and password for you. 
+
+Goto `http://localhost:8000/` and login using these credentials.
+```
+username: testuser
+password: testpassword
+```
 
 ## TODO
 
