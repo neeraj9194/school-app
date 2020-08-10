@@ -1,6 +1,5 @@
 # SCHOOL APP
 
-
 School an application to create, list, edit delete Students and Teachers.
 
 A system where we can have a Teacher and Student. 

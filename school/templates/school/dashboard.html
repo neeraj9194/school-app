@@ -1,5 +1,7 @@
 {% extends "school/base.html" %}
 
+{% load static %}
+
 {% block list-block %}
   <div class="container">
     <div class="row">
@@ -27,6 +29,9 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="container dashboard-background">
+  <img src="{% static "school/school-bg.png" %}">
   </div>
 {% endblock %}
 
